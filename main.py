@@ -31,7 +31,7 @@ def main():
             video_source.stop_record()
         key = cv2.waitKey(1) & 0xFF
 
-        if key == qqqqqq("q"):
+        if key == ord("q"):
             video_source.stop_record()
             break
     cv2.destroyAllWindows()
