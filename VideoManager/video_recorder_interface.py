@@ -9,8 +9,8 @@ class VideoRecorderInterface(metaclass=abc.ABCMeta):
                 callable(subclass.start_record) and
                 hasattr(subclass, 'stop_record') and
                 callable(subclass.stop_record) and
-                hasattr(subclass, 'read') and
-                callable(subclass.read))
+                hasattr(subclass, 'record_frame') and
+                callable(subclass.record_frame))
 
     @abc.abstractmethod
     def start_record(self):
@@ -20,4 +20,9 @@ class VideoRecorderInterface(metaclass=abc.ABCMeta):
     @abc.abstractmethod
     def stop_record(self):
         """Stop recording video source"""
+        raise NotImplementedError
+
+    @abc.abstractmethod
+    def record_frame(self, frame):
+        """Write frame"""
         raise NotImplementedError
