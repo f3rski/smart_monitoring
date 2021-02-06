@@ -21,8 +21,3 @@ class VideoRecorderInterface(metaclass=abc.ABCMeta):
     def stop_record(self):
         """Stop recording video source"""
         raise NotImplementedError
-
-    @abc.abstractmethod
-    def read(self):
-        """Read frame from video source"""
-        raise NotImplementedError
