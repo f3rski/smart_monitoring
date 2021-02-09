@@ -23,11 +23,11 @@ class VideoSource(VideoSourceInterface, VideoRecorderInterface):
         self.__video_stream.stop()
         self.__video_recorder.stop_record()
 
-    def start_record(self):
-        return self.__video_recorder.start_record()
+    def init_record(self):
+        return self.__video_recorder.init_record()
 
-    def record_frame(self, frame):
-        self.__video_recorder.record_frame(frame)
+    def start_record(self, frame):
+        self.__video_recorder.start_record(frame)
 
     def stop_record(self):
         return self.__video_recorder.stop_record()
