@@ -1,6 +1,7 @@
 from ObjectAnalyzer.object_analyzer import ObjectAnalyzer
 from VideoManager.video_source import VideoSource
 from VideoManager.empty_frame_exception import EmptyFrame
+from Logic.simple_model import SimpleModel
 
 import cv2
 import copy
@@ -14,6 +15,7 @@ def main():
     video_source = VideoSource(0, VIDEO_STORAGE_PATH)
     video_source.start()
     analyzer = ObjectAnalyzer(CAFFE_PROTOTXT, CAFFE_MODEL)
+    model = SimpleModel("policy.json")
 
     while True:
         try:
@@ -25,7 +27,7 @@ def main():
             break
 
         cv2.imshow("Frame", processed_frame)
-        if "person" in detected_objects:
+        if model.evaluate(detected_objects):
             if video_source.init_record():
                 video_source.start_record(frame)
         else:
