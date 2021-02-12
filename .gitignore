@@ -1,5 +1,6 @@
 # temp files
-temp/
+policy.json
+video_storage
 
 # pycharm IDE files
 .idea
