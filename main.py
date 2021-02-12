@@ -8,7 +8,7 @@ import copy
 
 CAFFE_PROTOTXT = "resources/MobileNetSSD_deploy.prototxt.txt"
 CAFFE_MODEL = "resources/MobileNetSSD_deploy.caffemodel"
-VIDEO_STORAGE_PATH = "/home/tf/myrepos/smart_monitoring/temp/"
+VIDEO_STORAGE_PATH = "video_storage/"
 
 
 def main():
